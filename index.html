@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <script id="profile-template" type="text/x-handlebars-template">
+      <img src="{{imgUrl}}" alt="user-pic" />
+      <h2>{{fname}} {{lname}}</h2>
+      <h3>{{city}}, {{country}}</h3>
+    </script>
+
+    <script id="kanye-template" type="text/x-handlebars-template">
+      <!-- <div id="quote"> -->
+      <div>Favorite quote:</div>
+      <div>{{quote}}</div>
+      <!-- </div> -->
+    </script>
+
+    <script id="pokemon-template" type="text/x-handlebars-template">
+      <!-- <div id="poke"> -->
+      <img src="{{imgUrl}}" alt="pokemon-pic" />
+      <p>Favorite Pokemon: {{name}}</p>
+      <!-- </div> -->
+    </script>
+
+    <script id="about-template" type="text/x-handlebars-template">
+      <!-- <div id="about"> -->
+      <h2>About me:</h2>
+      <p>{{about}}</p>
+      <!-- </div> -->
+    </script>
+
+    <script id="friends-template" type="text/x-handlebars-template">
+      {{#each friend}}
+        <li>{{fname}} {{lname}}</li>
+      {{/each}}
+    </script>
+
+    <div class="profile"></div>
+    <div class="quote"></div>
+    <div class="poke"></div>
+    <div class="about"></div>
+    <ul class="friends"></ul>
+    <div class="btns">
+      <button id="gen" onclick="Controller.generateUser()">
+        Generate User
+      </button>
+      <button id="save" onclick="Controller.saveUser()">
+        Save User
+      </button>
+      <button id="load" disabled="disabled">Load User</button>
+    </div>
+    <script src="js/model.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
