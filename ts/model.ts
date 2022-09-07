@@ -110,5 +110,10 @@ class Model {
         return friends;
     }
 
-
+    static loadUser(index: number): User{
+      let users = JSON.parse(localStorage.users);
+      Model.currentUser = users[index];
+      console.log(users);
+      return users[index];
+    }
   }

@@ -44,8 +44,10 @@
       {{/each}}
     </script>
 
-    <div class="profile"></div>
-    <div class="quote"></div>
+    <div class="profile"><h2>Random Profile Generator</h2> </div>
+    <div class="quote">this site made for generating random profiles... <br> 
+      Just press on "Generate User" &#128512
+    </div>
     <div class="poke"></div>
     <div class="about"></div>
     <ul class="friends"></ul>
@@ -56,7 +58,7 @@
       <button id="save" onclick="Controller.saveUser()">
         Save User
       </button>
-      <button id="load" disabled="disabled">Load User</button>
+      <button id="load" class="button-49" onclick="Controller.loadUser()" >Load User</button>
     </div>
     <script src="js/model.js"></script>
     <script src="js/renderer.js"></script>

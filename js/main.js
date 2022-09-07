@@ -1,17 +1,17 @@
 "use strict";
 class Controller {
     static saveUser() {
-        console.log("sadfsdf");
+        console.log("saving...");
         if (Model.currentUser) {
             if (localStorage.users) {
                 let users = JSON.parse(localStorage.users);
+                console.log(users);
                 for (let user of users) {
                     if (JSON.stringify(user) === JSON.stringify(Model.currentUser)) {
                         alert("User already exists...");
                         return;
                     }
                 }
-                console.log(users.length);
                 users.push(Model.currentUser);
                 localStorage.users = JSON.stringify(users);
             }
@@ -24,12 +24,18 @@ class Controller {
         }
     }
     static loadUser() {
+        Controller.renderer.renderSavedUsers();
+        $(".quote").on("click", "li", function () {
+            let userIndex = $(this).data().id;
+            console.log(userIndex);
+            let user = Model.loadUser(userIndex);
+            Controller.renderer.render(user);
+        });
     }
 }
 Controller.renderer = new Renderer();
 Controller.generateUser = () => {
-    const renderer = new Renderer();
     Model.generateData().then(function (data) {
-        renderer.render(data);
+        Controller.renderer.render(data);
     });
 };

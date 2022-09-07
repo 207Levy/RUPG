@@ -39,4 +39,25 @@ class Renderer {
         const inject = this.pokemonTemplate(pokemon);
         $(".poke").append(inject);
     }
+    renderSavedUsers() {
+        if (!localStorage.users) {
+            alert("No users on localstorage");
+            return;
+        }
+        this.emptyAll();
+        const container = $(".quote");
+        const ul = $(`<ul class="users"></ul>`);
+        const users = JSON.parse(localStorage.users);
+        for (let i = 0; i < users.length; i++) {
+            ul.append(`<li class="user" data-id="${i}">${users[i].profile.fname} ${users[i].profile.lname}</li>`);
+        }
+        container.append(ul);
+    }
+    emptyAll() {
+        $(".profile").empty();
+        $(".quote").empty();
+        $(".about").empty();
+        $(".poke").empty();
+        $(".friends").empty();
+    }
 }
