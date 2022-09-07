@@ -64,6 +64,7 @@ class Model {
             let num = Math.floor(Math.random() * 900);
             const response = yield $.get(`https://pokeapi.co/api/v2/pokemon/${num}/`);
             let name = response.name;
+            name = name.toUpperCase()[0] + name.slice(1);
             let imgUrl = response.sprites.front_default;
             return { name, imgUrl };
         });
