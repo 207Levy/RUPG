@@ -56,9 +56,6 @@ body {
   grid-area: q;
 }
 
-.quote > ul > li {
-  cursor: pointer;
-}
 
 .poke {
   display: grid;
@@ -105,7 +102,51 @@ body {
   grid-area: b;
 }
 
-/* CSS */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-container {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  max-height: 500%;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  /* min-width: ; */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  /* scroll-behavior: auto; */
+  overflow: auto
+  
+}
+
+
+.dropdown-container a {
+  cursor: pointer;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-container a:hover {
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #ade9fa 0,
+    #9697fd 100%
+  );
+}
+
+.show {
+  display: block;
+}
+
+/* CSS for buttons decorations*/
+
 button {
   align-items: center;
   appearance: none;

@@ -1,7 +1,7 @@
 class Controller {
     
     static renderer = new Renderer();
-
+  
     static generateUser = () => {
         Model.generateData().then(function (data){
         Controller.renderer.render(data);})
@@ -38,9 +38,8 @@ class Controller {
 
     static loadUser(){
         Controller.renderer.renderSavedUsers();
-        $(".quote").on("click", "li", function(){
+        $(".dropdown-container").on("click", "a", function(){
             let userIndex = $(this).data().id;
-            console.log(userIndex);
             let user = Model.loadUser(userIndex);
             Controller.renderer.render(user);
         } )
