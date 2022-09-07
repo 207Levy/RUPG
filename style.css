@@ -13,6 +13,11 @@ body {
     "k f"
     "a f"
     "b f";
+    /* background-color:  #ff4f4f23; */
+    background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #ee4545 0,
+    #e0f857 100%);
 }
 
 .profile {
@@ -110,6 +115,7 @@ body {
 .dropdown-container {
   display: none;
   position: absolute;
+  opacity: 0.95;
   bottom: 50px;
   max-height: 500%;
   background-image: radial-gradient(
