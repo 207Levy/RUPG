@@ -43,7 +43,7 @@ body {
   display: grid;
   justify-self: center;
   align-self: center;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 .profile > h2 {
